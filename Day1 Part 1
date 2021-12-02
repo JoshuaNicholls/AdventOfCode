@@ -1,0 +1,18 @@
+#see problem at https://adventofcode.com/2021/day/1
+
+import pandas as pd
+
+day1 = pd.read_csv('input.txt', sep= '\t', header=None)
+day1.head()
+
+num_larger = 0
+
+for i in list(range(len(day1))):
+    if i != 0:
+        j = i - 1
+        a = int(day1.iloc[i])
+        b = int(day1.iloc[j])
+        if a > b:
+            num_larger += 1
+
+print(num_larger)
